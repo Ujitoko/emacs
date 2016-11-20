@@ -51,7 +51,7 @@
 (show-paren-mode 1)
 
 ;; ;;スペースやタブなどを可視化する
-(global-whitespace-mode 1)
+;;(global-whitespace-mode 1)
 
 ;;yes or noをy or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -127,7 +127,14 @@
 
 ;;ironyの設定
 ;;melpaの設定を行って、ironyをインストール
-(require 'irony)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
+;;(require 'irony)
+;;(add-hook 'c-mode-hook 'irony-mode)
+;;(add-hook 'c++-mode-hook 'irony-mode)
+;;(add-hook 'objc-mode-hook 'irony-mode)
+
+;;;; for ctags.el
+(require 'ctags nil t)
+(setq tags-revert-without-query t)
+(setq ctags-command "ctags -R --fields=\"+afikKlmnsSzt\" ")
+(global-set-key (kbd "<f5>") 'ctags-create-or-update-tags-table)
+(global-set-key (kbd "M-.") 'ctags-search)
