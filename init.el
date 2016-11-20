@@ -29,10 +29,10 @@
   (auto-install-compatibility-setup))
 
 ;;環境を日本語にする
-(require 'mozc)
-(set-language-environment "Japanese")
-(setq default-input-method "japanese-mozc")
-(prefer-coding-system 'utf-8)
+;;(require 'mozc)
+;;(set-language-environment "Japanese")
+;;(setq default-input-method "japanese-mozc")
+;;(prefer-coding-system 'utf-8)
 		      
 ;;C-hでBackspaceに
 (keyboard-translate ?\C-h ?\C-?)
