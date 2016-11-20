@@ -12,6 +12,12 @@
 
 # elpa/
 # elisp/
+
 auto-save-list/
 ac-comphist.dat
-.gitignore~
+
+# ...~ のファイルを無視する
+*~
+
+# #...# のファイルを無視する
+¥#*#
