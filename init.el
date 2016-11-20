@@ -10,16 +10,13 @@
 ;;load-pathに追加するフォルダ
 (add-to-load-path "elisp" "elpa")
 
+;;package-install設定
+;;MELPA, MELPA-stable, Marmalade, Orgを追加
 (require 'package)
-;; MELPAを追加
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;; MELPA-stableを追加
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-;; Marmaladeを追加
 (add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;; Orgを追加
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-;; 初期化
 (package-initialize)
 
 ;;パッケージのインストールを自動化
@@ -46,17 +43,15 @@
 ;;列数を表示する
 (column-number-mode t)
 
-;; ;;行数を表示する
-;;(global-linum-mode t)
-;; ;;(setq linum-format "%4dl")
+;;行数を表示する
+(global-linum-mode t)
+(setq linum-format "%4dl")
 
 ;; ;;対応する()を光らせる
 (show-paren-mode 1)
 
 ;; ;;スペースやタブなどを可視化する
-;;(global-whitespace-mode 1)
-
-;;(tool-bar-mode-1)
+(global-whitespace-mode 1)
 
 ;;yes or noをy or n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -78,9 +73,7 @@
     (set-mark (point))
     (end-of-line)
     (comment-or-uncomment-region (region-beginning) (region-end))))
-
 (global-set-key (kbd "M-;") 'one-line-comment)
-
 
 ;; Auto Complete
 (require 'auto-complete-config)
@@ -105,7 +98,6 @@
 
 
 (load-theme 'spolsky t)
-
 
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
